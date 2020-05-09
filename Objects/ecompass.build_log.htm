@@ -1,0 +1,164 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.29.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Omkar Jadhav, Manipal Institute Of Technology, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.29.0.0
+Toolchain Path:  E:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.29.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.2.0
+Target DLL:      PEMicro\Pemicro_ArmCortexInterface.dll V1.3.0.0
+Dialog DLL:      TARMCM1.DLL V1.14.1.0
+ 
+<h2>Project:</h2>
+E:\ecompass project\ecompass.uvprojx
+Project File Date:  05/08/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'E:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'Target 1'
+compiling ecompassmain.c...
+.\RTE\Device\MKL25Z128xxx4\i2c.h(42): warning:  #1-D: last line of file ends without a newline
+  #endif /* SOURCES_I2C_H_ */
+ecompassmain.c(95): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 'S');
+ecompassmain.c(96): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 'a');
+ecompassmain.c(97): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 't');
+ecompassmain.c(98): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 'i');
+ecompassmain.c(99): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 'f');
+ecompassmain.c(100): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 'i');
+ecompassmain.c(101): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 'e');
+ecompassmain.c(102): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_Put(UART0, 'd');
+ecompassmain.c(107): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_String(UART0," ENabled magnetic sensor... \n");
+ecompassmain.c(109): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_String(UART0," Mode set to Continuous conversion mode... \n");
+ecompassmain.c(116): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  	uart_String(UART0," Gain configured to +/- 1.3... \n");
+ecompassmain.c(131): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  			uart_String(UART0,"X axis  \n");
+ecompassmain.c(132): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  			uart_Put(UART0,(raw_x/10)+48);
+ecompassmain.c(133): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  			uart_Put(UART0,(raw_x%10)+48);
+ecompassmain.c(136): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  			uart_String(UART0,"Y axis \n");
+ecompassmain.c(137): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  			uart_Put(UART0,(raw_y/10 )+48);
+ecompassmain.c(138): warning:  #167-D: argument of type "UART0_Type *" is incompatible with parameter of type "UART_MemMapPtr"
+  			uart_Put(UART0,(raw_y%10)+48);
+ecompassmain.c: 18 warnings, 0 errors
+compiling spi.c...
+RTE\Device\MKL25Z128xxx4\i2c.h(42): warning:  #1-D: last line of file ends without a newline
+  #endif /* SOURCES_I2C_H_ */
+RTE\Device\MKL25Z128xxx4\spi.c(37): warning:  #111-D: statement is unreachable
+  			break;
+RTE\Device\MKL25Z128xxx4\spi.c(68): warning:  #111-D: statement is unreachable
+  			break;
+RTE\Device\MKL25Z128xxx4\spi.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=2948 RO-data=216 RW-data=32 ZI-data=1480  
+FromELF: creating hex file...
+".\Objects\ecompass.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.6.0.pack
+                ARM.CMSIS.5.6.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: I2C Version: 2.3.0
+   * Component: USART Version: 2.3.0
+   * Component: Custom Version: 2.3.0
+   * Component: Custom Version: 2.3.0
+   * Component: CORE Version: 5.3.0
+   * Component: DSP Variant: Library Version: 1.7.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.ARM_Compiler.1.6.2.pack
+                Keil.ARM_Compiler.1.6.2
+                Keil ARM Compiler extensions for ARM Compiler 5 and ARM Compiler 6
+   * Component: Event Recorder Variant: DAP Version: 1.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.Kinetis_KLxx_DFP.1.15.0.pack
+                Keil.Kinetis_KLxx_DFP.1.15.0
+                NXP Kinetis KLxx Series Device Support and Examples
+   * Component: LED Version: 1.0.0
+   * Component: Startup Version: 2.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDK-Middleware.7.10.0.pack
+                Keil.MDK-Middleware.7.10.0
+                Middleware for Keil MDK-Professional and MDK-Plus
+   * Component: LED Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Compiler
+  .\RTE\Device\MKL25Z128xxx4
+  .\RTE\_Target_1
+  C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include
+  C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include
+  C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include
+  C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include
+  C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include
+  C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::Board Support:LED:1.0.0 (API)
+      Include file:  Board\Board_LED.h
+
+   * Component: ::CMSIS Driver:I2C:2.3.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_I2C.h
+
+   * Component: ::CMSIS Driver:USART:2.3.0 (API)
+      Include file:  CMSIS\Driver\Include\Driver_USART.h
+
+   * Component: ARM::CMSIS Driver:I2C:Custom:2.3.0
+      Include file:  CMSIS\Driver\Include\Driver_I2C.h
+      Source file:   CMSIS\Driver\DriverTemplates\Driver_I2C.c
+
+   * Component: ARM::CMSIS Driver:USART:Custom:2.3.0
+      Include file:  CMSIS\Driver\Include\Driver_USART.h
+      Source file:   CMSIS\Driver\DriverTemplates\Driver_USART.c
+
+   * Component: ARM::CMSIS:CORE:5.3.0
+
+   * Component: ARM::CMSIS:DSP:Library:1.7.0
+      Library file:  CMSIS\DSP\Lib\ARM\arm_cortexM0l_math.lib
+      Include file:  CMSIS\DSP\Include\arm_math.h
+
+   * Component: Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0
+      Source file:   Source\EventRecorder.c
+      Include file:  Include\EventRecorder.h
+      Include file:  Config\EventRecorderConf.h
+
+   * Component: Keil.FRDM-KL25Z::Board Support:LED:1.0.0
+      Source file:   Boards\NXP\FRDM-KL25Z\Common\LED_FRDM-KL25Z.c
+
+   * Component: Keil::Device:Startup:2.5.0
+      Source file:   Device\Source\ARM\startup_MKL25Z4.s
+      Include file:  Device\Source\system_MKL25Z4.h
+      Source file:   Device\Source\system_MKL25Z4.c
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
