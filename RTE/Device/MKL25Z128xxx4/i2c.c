@@ -1,14 +1,5 @@
-/*
- * i2c.c
- *
- *  Created on: 14/04/2017
- *      Author: evandro
- */
 #include "i2c.h"
 
-/****************************************************************************************
-*
-*****************************************************************************************/
 bool i2c_Init(I2C_MemMapPtr i2c, uint8_t alt, uint8_t mult, uint8_t icr)
 {
 	if(i2c == I2C0)
@@ -43,15 +34,8 @@ bool i2c_Init(I2C_MemMapPtr i2c, uint8_t alt, uint8_t mult, uint8_t icr)
 				return false;
 			break;
 		}
-		//
+		
 		SIM_SCGC4 |= SIM_SCGC4_I2C0_MASK;
-		//
-		//I2C0_F = I2C_F_ICR(icr) | I2C_F_MULT(mult);
-		// enable IIC
-		//I2C0_C1 = I2C_C1_IICEN_MASK |	// I2C Enable
-		//		  I2C_C1_MST_MASK   |   // Master Mode Select
-		//		  I2C_C1_TX_MASK;		// Transmit Mode Select
-		//return true;
 	}
 	else if (i2c == I2C1)
 	{
@@ -85,29 +69,16 @@ bool i2c_Init(I2C_MemMapPtr i2c, uint8_t alt, uint8_t mult, uint8_t icr)
 				return false;
 			break;
 		}
-		//
+		
 		SIM_SCGC4 |= SIM_SCGC4_I2C1_MASK;
-		//
-		//I2C1_F = I2C_F_ICR(icr) | I2C_F_MULT(mult);
-		// enable IIC
-		//I2C1_C1 = I2C_C1_IICEN_MASK |	// I2C Enable
-		//		  I2C_C1_MST_MASK   |   // Master Mode Select
-		//		  I2C_C1_TX_MASK;		// Transmit Mode Select
-		//return true;
 	}
+	
 	else
 	{
 		return false;
 	}
 
-	//I2C1_F
-	//i2c->F = 0x14;//
 	i2c->F = I2C_F_ICR(icr) | I2C_F_MULT(mult);
-	// enable IIC
-	/*i2c->C1 = I2C_C1_IICEN_MASK |	// I2C Enable
-			  I2C_C1_MST_MASK   |   // Master Mode Select
-			  I2C_C1_TX_MASK;		// Transmit Mode Select
-	*/
 	i2c->C1 = 0x80;
 	return true;
 
@@ -202,21 +173,7 @@ void i2c_WriteRegister(I2C_MemMapPtr i2c,uint8_t SlaveAddress,uint8_t RegisterAd
 	i2c_Wait(i2c);
 
 	i2c_Stop(i2c);
-
 	delay(50);
-
-	/*
-	i2c_RepeatedStart(i2c);
-	i2c_WriteByte(i2c, ((SlaveAddress << 1) | I2C_READ));
-	i2c_Wait(i2c);
-	i2c_EnterRxMode(i2c);
-	i2c_DisableAck(i2c);
-	res = i2c_ReadByte(i2c);
-	i2c_Wait(i2c);
-	i2c_Stop(i2c);
-	res = i2c_ReadByte(i2c);
-	delay(50);
-	return res;*/
 }
 /****************************************************************************************
 *

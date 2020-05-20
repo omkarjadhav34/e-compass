@@ -1,9 +1,3 @@
-/*
- * i2c.h
- *
- *  Created on: 14/04/2017
- *      Author: evandro
- */
 
 #ifndef SOURCES_I2C_H_
 #define SOURCES_I2C_H_
@@ -35,8 +29,6 @@ uint8_t i2c_ReadByte(I2C_MemMapPtr i2c);
 uint8_t i2c_ReadRegister(I2C_MemMapPtr i2c,uint8_t SlaveAddress,uint8_t RegisterAddress);
 uint8_t i2c_ReadMultRegister(I2C_MemMapPtr i2c,uint8_t SlaveAddress,uint8_t RegisterAddress,uint8_t n_data, uint8_t *res);
 void i2c_WriteMultRegister(I2C_MemMapPtr i2c,uint8_t SlaveAddress,uint8_t RegisterAddress, uint8_t n_data, uint8_t *data);
-//uint8_t i2c_ReadMultRegister(I2C_MemMapPtr i2c,uint8_t SlaveAddress,uint8_t n_data, uint8_t *res);
-
 void delay(uint32_t t);
 
 #endif /* SOURCES_I2C_H_ */

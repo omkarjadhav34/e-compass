@@ -1,7 +1,3 @@
-/*
- * spi.c
- * Author: Evandro
- */
 #include "spi.h"
 /****************************************************************************************
 *
@@ -13,9 +9,9 @@ bool spi_Init(SPI_MemMapPtr spi,bool alt,uint8_t pre, uint16_t div,bool cs)
 		switch(alt)
 		{
 			case ALT_0:
-				SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;      //Turn on clock to C module
+				SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;    //Turn on clock to C module
 				//SIM_SCGC4 |= SIM_SCGC4_SPI0_MASK;  	//Enable SPI0 clock
-				if(cs == CS_AUT)						//Chip Select Auto
+				if(cs == CS_AUT)											//Chip Select Auto
 					PORTC_PCR4 = PORT_PCR_MUX(0x2);     //Set PTC4 to mux 2 [SPI0_PCS0]
 				PORTC_PCR5 = PORT_PCR_MUX(0x2);    		//Set PTC5 to mux 2 [SPI0_SCK]
 				PORTC_PCR6 = PORT_PCR_MUX(0x2);    		//Set PTC6 to mux 2 [SPI0_MOSI]

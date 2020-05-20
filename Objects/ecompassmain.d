@@ -1,4 +1,4 @@
-.\objects\ecompassmain.o: ecompassmain.c
+.\objects\ecompassmain.o: RTE\_Target_1\ecompassmain.c
 .\objects\ecompassmain.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\ecompassmain.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\ecompassmain.o: C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include\MKL25Z4.h

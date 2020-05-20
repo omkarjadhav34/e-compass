@@ -87,39 +87,71 @@ int16_t raw_x=0,raw_y=0,raw_z=0;
 uint8_t bufx_H=0, bufy_H=0, bufz_H=0,bufx_L=0, bufy_L=0, bufz_L=0;
 uint8_t sr=0;
 
+void lsm_Config()
+{
+		uart_String(UART0," ENabled magnetic sensor... \n");
+	i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_MR_REG_M,0 );    // Mode : Continuous Conversion
+	i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_CRA_REG_M,16 );  // Data output rate Configuration: 15 Hz
+		i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_IRA_REG_M );    // 
+		i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_IRB_REG_M );
+		i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_IRC_REG_M );
+		uart_String(UART0," Gain configured to +/- 1.3... \n");
+		i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_CRB_REG_M ,32 );     //magnitude gain=32;
+}
+
+
+void spi_init()
+{
+	volatile unsigned long delay;
+  SIM->SCGC4 |= (1 << 22);//activate SSI0
+  SIM->SCGC5 |= (1 <<  11);//activate Port C
+	
+  PORTC->PCR[7] |= (1 << 8);//configure PTC7(DC) as GPIO(ALT1) 
+  PORTC->PCR[8] |= (1 << 8);//configure PTC8(RST) as GPIO(ALT1)
+  GPIOC->PDDR |= (1 << 7)|(1 << 8);//set PTC7(DC),PTC8(RST) as output pins 
+  
+  PORTC->PCR[4] |= (0x2 << 8);//configure PTC4 as SPI SS(ALT2) 
+  PORTC->PCR[5] |= (0x2 << 8);//configure PTC5 as SPI Clock(ALT2)
+  PORTC->PCR[6] |= (0x2 << 8);//configure PTC6 as SPI MOSI(ALT2)
+  
+  SPI0->C1 &= ~(1 << 6);//disable SSI 
+  SPI0->C1 |= (1 << 4);//master mode
+  SPI0->C1 &= ~(1 << 0);//SPI serial data transfers start with MSB
+  SPI0->C1 &= ~(1 << 3);//CPOL=0
+  SPI0->C1 &= ~(1 << 2);//CPHA=0
+  /*
+  SSOE, MODFEN=1 --> SS pin (of Master) used as Slave Select Output
+  */
+  SPI0->C1 |= (1 << 1);//SSOE=1
+  SPI0->C2 |= (1 << 4);//MODFEN=1
+  /*
+  BRD = (SPPR + 1) * 2^(SPR + 1)
+  SPPR=0
+  SPR=2
+  BRD = 1 * 2^3 = 8
+  Baud Rate = Bus Clock Freq./BRD = 24 MHz (default)/8 = 3 MHz
+  */
+  SPI0->BR &= ~(0x7 << 4);//SPPR=0
+  SPI0->BR |= (0x2 << 0);//SPR=2
+  SPI0->C1 |= (1 << 6);//enable SSI
+
+  GPIOC->PDOR &= ~(1 << 8);// hold RST(PTC8) pin LOW
+  for(delay=0; delay<5; delay++);// delay minimum 100 ns
+  GPIOC->PDOR |= (1 << 8);// set RST(PTC8) pin HIGH
+}
 int Main (void) 
 	{
-	SystemCoreClock =24000000;
-	SystemCoreClockUpdate();
-	uart_Init ( (UART_MemMapPtr)UART0,ALT0,UART_BAUD_1 );
-	uart_Put(UART0, 'S');
-	uart_Put(UART0, 'a');
-	uart_Put(UART0, 't');
-	uart_Put(UART0, 'i');
-	uart_Put(UART0, 'f');
-	uart_Put(UART0, 'i');
-	uart_Put(UART0, 'e');
-	uart_Put(UART0, 'd');
+		SystemCoreClock =24000000;                                // Set Clock speed : 24MHz
+		SystemCoreClockUpdate();			                            // Update clockspeed 
+		uart_Init ( (UART_MemMapPtr)UART0,ALT0,UART_BAUD_1 );     // Uart initilization
+		i2c_Init(I2C0, ALT1, MULT0, 0x1F);                        //I2C Initialized
+		uart_String(UART0, "UART, I2C Initialized\n");
+		lsm_Config();
+		//Nokia5110_Init();
 	
-	i2c_Init(I2C0, ALT1, MULT0, 0x1F);
-	//uart_String(UART0," I2C TRASMISSION Enabled... \n");
-	
-	uart_String(UART0," ENabled magnetic sensor... \n");
-	
-	uart_String(UART0," Mode set to Continuous conversion mode... \n");
-	i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_MR_REG_M,0 );
-	i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_CRA_REG_M,16 );
-	i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_IRA_REG_M );
-	i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_IRB_REG_M );
-	i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_IRC_REG_M );
-	//int maggain=32;
-	uart_String(UART0," Gain configured to +/- 1.3... \n");
-	i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_CRB_REG_M ,32 );
-	
-	while(1)
+		while(1)
 		{
 			sr=i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_SR_REG_M);
-			
 			
 			bufx_H= i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_OUT_X_H_M  );
 			bufx_L= i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_OUT_X_L_M  );
@@ -127,19 +159,23 @@ int Main (void)
 			bufy_L= i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_OUT_Y_L_M  );
 			raw_y =(int16_t )(((uint8_t)bufy_H <<8)|(uint8_t)bufy_L )/11;
 			raw_x =(int16_t )(((uint8_t)bufx_H <<8)|(uint8_t)bufx_L )/11;
-
-			uart_String(UART0,"X axis  \n");
-			uart_Put(UART0,(raw_x/10)+48);
+			
+			sr=i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_SR_REG_M);
+			uart_String(UART0,"X-axis \n");
+			uart_Put(UART0,(raw_x/10)+48);  //converting to ASCII characters
 			uart_Put(UART0,(raw_x%10)+48);
 			bufx_H=0;
 			bufx_L=0;
-			uart_String(UART0,"Y axis \n");
-			uart_Put(UART0,(raw_y/10 )+48);
+			uart_String(UART0,"Y-axis \n");
+			uart_Put(UART0,(raw_y/10 )+48); //converting to ASCII characters
 			uart_Put(UART0,(raw_y%10)+48);
 			bufy_H=0;
 			bufy_L=0;
 			
-			i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_SR_REG_M,0<<1);
+			i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_SR_REG_M,(0<<1|0));
+			delay(2000);
+			
+			sr=i2c_ReadRegister (I2C0,I2C_MAG_ADDR ,LSM303_SR_REG_M);
 			i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_MR_REG_M,0 );
 
 }

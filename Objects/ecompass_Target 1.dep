@@ -15,13 +15,13 @@ I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AF542)
 I (RTE\Device\MKL25Z128xxx4\adc.h)(0x5E7E548B)
 I (RTE\Device\MKL25Z128xxx4\dac.h)(0x5E7E549D)
 I (RTE\Device\MKL25Z128xxx4\gpio.h)(0x5E7E54FA)
-I (RTE\Device\MKL25Z128xxx4\i2c.h)(0x5D6856BE)
+I (RTE\Device\MKL25Z128xxx4\i2c.h)(0x5EB9BBC6)
 I (RTE\Device\MKL25Z128xxx4\pwm.h)(0x5E7E54B8)
 I (RTE\Device\MKL25Z128xxx4\spi.h)(0x5E7E54A4)
 I (RTE\Device\MKL25Z128xxx4\wdog.h)(0x5E7E5456)
 I (RTE\Device\MKL25Z128xxx4\pit.h)(0x5E7E54C6)
-F (.\RTE\Device\MKL25Z128xxx4\i2c.c)(0x5E7E54EE)(--c99 --gnu -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Compiler-I.\RTE\Device\MKL25Z128xxx4-I.\RTE\_Target_1-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board-D__UVISION_VERSION="529" -D_RTE_ -DMKL25Z128xxx4-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
-I (RTE\Device\MKL25Z128xxx4\i2c.h)(0x5D6856BE)
+F (.\RTE\Device\MKL25Z128xxx4\i2c.c)(0x5EB9BBC6)(--c99 --gnu -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Compiler-I.\RTE\Device\MKL25Z128xxx4-I.\RTE\_Target_1-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board-D__UVISION_VERSION="529" -D_RTE_ -DMKL25Z128xxx4-o .\objects\i2c.o --omf_browse .\objects\i2c.crf --depend .\objects\i2c.d)
+I (RTE\Device\MKL25Z128xxx4\i2c.h)(0x5EB9BBC6)
 I (C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include\MKL25Z4.h)(0x585B9F32)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AF540)
 I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D25B3DE)
@@ -30,31 +30,7 @@ I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsi
 I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D25B3DE)
 I (.\RTE\Device\MKL25Z128xxx4\system_MKL25Z4.h)(0x56443FC2)
 I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AF540)
-F (.\ecompassmain.c)(0x5EB52A42)(--c99 --gnu -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Compiler-I.\RTE\Device\MKL25Z128xxx4-I.\RTE\_Target_1-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board-D__UVISION_VERSION="529" -D_RTE_ -DMKL25Z128xxx4-o .\objects\ecompassmain.o --omf_browse .\objects\ecompassmain.crf --depend .\objects\ecompassmain.d)
-I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AF540)
-I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AF542)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include\MKL25Z4.h)(0x585B9F32)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D25B3DE)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D25B3DE)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25B3DE)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D25B3DE)
-I (.\RTE\Device\MKL25Z128xxx4\system_MKL25Z4.h)(0x56443FC2)
-I (.\RTE\Device\MKL25Z128xxx4\externs.h)(0x5E7E543E)
-I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AF540)
-I (.\RTE\Device\MKL25Z128xxx4\adc.h)(0x5E7E548B)
-I (.\RTE\Device\MKL25Z128xxx4\dac.h)(0x5E7E549D)
-I (.\RTE\Device\MKL25Z128xxx4\gpio.h)(0x5E7E54FA)
-I (.\RTE\Device\MKL25Z128xxx4\i2c.h)(0x5D6856BE)
-I (.\RTE\Device\MKL25Z128xxx4\pwm.h)(0x5E7E54B8)
-I (.\RTE\Device\MKL25Z128xxx4\spi.h)(0x5E7E54A4)
-I (.\RTE\Device\MKL25Z128xxx4\uart.h)(0x5E7E547B)
-I (.\RTE\Device\MKL25Z128xxx4\wdog.h)(0x5E7E5456)
-I (.\RTE\Device\MKL25Z128xxx4\pit.h)(0x5E7E54C6)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include\Driver_I2C.h)(0x5C8A47A4)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include\Driver_Common.h)(0x5C8A47A4)
-I (E:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5D9AF540)
-I (C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board\Board_LED.h)(0x5D144092)
-F (.\RTE\Device\MKL25Z128xxx4\spi.c)(0x5E7E54AA)(--c99 --gnu -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Compiler-I.\RTE\Device\MKL25Z128xxx4-I.\RTE\_Target_1-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board-D__UVISION_VERSION="529" -D_RTE_ -DMKL25Z128xxx4-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
+F (.\RTE\Device\MKL25Z128xxx4\spi.c)(0x5EB9BBC6)(--c99 --gnu -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Compiler-I.\RTE\Device\MKL25Z128xxx4-I.\RTE\_Target_1-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board-D__UVISION_VERSION="529" -D_RTE_ -DMKL25Z128xxx4-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
 I (RTE\Device\MKL25Z128xxx4\spi.h)(0x5E7E54A4)
 I (RTE\Device\MKL25Z128xxx4\externs.h)(0x5E7E543E)
 I (C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include\MKL25Z4.h)(0x585B9F32)
@@ -69,11 +45,21 @@ I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AF542)
 I (RTE\Device\MKL25Z128xxx4\adc.h)(0x5E7E548B)
 I (RTE\Device\MKL25Z128xxx4\dac.h)(0x5E7E549D)
 I (RTE\Device\MKL25Z128xxx4\gpio.h)(0x5E7E54FA)
-I (RTE\Device\MKL25Z128xxx4\i2c.h)(0x5D6856BE)
+I (RTE\Device\MKL25Z128xxx4\i2c.h)(0x5EB9BBC6)
 I (RTE\Device\MKL25Z128xxx4\pwm.h)(0x5E7E54B8)
 I (RTE\Device\MKL25Z128xxx4\uart.h)(0x5E7E547B)
 I (RTE\Device\MKL25Z128xxx4\wdog.h)(0x5E7E5456)
 I (RTE\Device\MKL25Z128xxx4\pit.h)(0x5E7E54C6)
+F (.\nokia.c)(0x5EBAB308)(--c99 --gnu -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Compiler-I.\RTE\Device\MKL25Z128xxx4-I.\RTE\_Target_1-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board-D__UVISION_VERSION="529" -D_RTE_ -DMKL25Z128xxx4-o .\objects\nokia.o --omf_browse .\objects\nokia.crf --depend .\objects\nokia.d)
+I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AF540)
+I (E:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AF542)
+I (E:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AF540)
+I (C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include\MKL25Z4.h)(0x585B9F32)
+I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm0plus.h)(0x5D25B3DE)
+I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h)(0x5D25B3DE)
+I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5D25B3DE)
+I (C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5D25B3DE)
+I (.\RTE\Device\MKL25Z128xxx4\system_MKL25Z4.h)(0x56443FC2)
 F (C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Boards\NXP\FRDM-KL25Z\Common\LED_FRDM-KL25Z.c)(0x56443FC2)(--c99 --gnu -c --cpu Cortex-M0+ -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\Compiler-I.\RTE\Device\MKL25Z128xxx4-I.\RTE\_Target_1-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Driver\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\ARM_Compiler\1.6.2\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include-IC:\Users\MAHE\AppData\Local\Arm\Packs\Keil\MDK-Middleware\7.10.0\Board-D__UVISION_VERSION="529" -D_RTE_ -DMKL25Z128xxx4-o .\objects\led_frdm-kl25z.o --omf_browse .\objects\led_frdm-kl25z.crf --depend .\objects\led_frdm-kl25z.d)
 I (C:\Users\MAHE\AppData\Local\Arm\Packs\Keil\Kinetis_KLxx_DFP\1.15.0\Device\Include\MKL25Z4.h)(0x585B9F32)
 I (E:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AF540)

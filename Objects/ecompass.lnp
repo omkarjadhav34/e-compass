@@ -1,8 +1,8 @@
 --cpu Cortex-M0+
 ".\objects\uart.o"
 ".\objects\i2c.o"
-".\objects\ecompassmain.o"
 ".\objects\spi.o"
+".\objects\nokia.o"
 ".\objects\led_frdm-kl25z.o"
 "C:\Users\MAHE\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Lib\ARM\arm_cortexM0l_math.lib"
 ".\objects\eventrecorder.o"

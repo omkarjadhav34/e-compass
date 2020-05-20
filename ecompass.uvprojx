@@ -393,14 +393,14 @@
               <FilePath>.\RTE\Device\MKL25Z128xxx4\i2c.c</FilePath>
             </File>
             <File>
-              <FileName>ecompassmain.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ecompassmain.c</FilePath>
-            </File>
-            <File>
               <FileName>spi.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\RTE\Device\MKL25Z128xxx4\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>nokia.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\nokia.c</FilePath>
             </File>
           </Files>
         </Group>
