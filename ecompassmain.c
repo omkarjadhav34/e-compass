@@ -99,46 +99,6 @@ void lsm_Config()
 		i2c_WriteRegister (I2C0,I2C_MAG_ADDR ,LSM303_CRB_REG_M ,32 );     //magnitude gain=32;
 }
 
-
-void spi_init()
-{
-	volatile unsigned long delay;
-  SIM->SCGC4 |= (1 << 22);//activate SSI0
-  SIM->SCGC5 |= (1 <<  11);//activate Port C
-	
-  PORTC->PCR[7] |= (1 << 8);//configure PTC7(DC) as GPIO(ALT1) 
-  PORTC->PCR[8] |= (1 << 8);//configure PTC8(RST) as GPIO(ALT1)
-  GPIOC->PDDR |= (1 << 7)|(1 << 8);//set PTC7(DC),PTC8(RST) as output pins 
-  
-  PORTC->PCR[4] |= (0x2 << 8);//configure PTC4 as SPI SS(ALT2) 
-  PORTC->PCR[5] |= (0x2 << 8);//configure PTC5 as SPI Clock(ALT2)
-  PORTC->PCR[6] |= (0x2 << 8);//configure PTC6 as SPI MOSI(ALT2)
-  
-  SPI0->C1 &= ~(1 << 6);//disable SSI 
-  SPI0->C1 |= (1 << 4);//master mode
-  SPI0->C1 &= ~(1 << 0);//SPI serial data transfers start with MSB
-  SPI0->C1 &= ~(1 << 3);//CPOL=0
-  SPI0->C1 &= ~(1 << 2);//CPHA=0
-  /*
-  SSOE, MODFEN=1 --> SS pin (of Master) used as Slave Select Output
-  */
-  SPI0->C1 |= (1 << 1);//SSOE=1
-  SPI0->C2 |= (1 << 4);//MODFEN=1
-  /*
-  BRD = (SPPR + 1) * 2^(SPR + 1)
-  SPPR=0
-  SPR=2
-  BRD = 1 * 2^3 = 8
-  Baud Rate = Bus Clock Freq./BRD = 24 MHz (default)/8 = 3 MHz
-  */
-  SPI0->BR &= ~(0x7 << 4);//SPPR=0
-  SPI0->BR |= (0x2 << 0);//SPR=2
-  SPI0->C1 |= (1 << 6);//enable SSI
-
-  GPIOC->PDOR &= ~(1 << 8);// hold RST(PTC8) pin LOW
-  for(delay=0; delay<5; delay++);// delay minimum 100 ns
-  GPIOC->PDOR |= (1 << 8);// set RST(PTC8) pin HIGH
-}
 int Main (void) 
 	{
 		SystemCoreClock =24000000;                                // Set Clock speed : 24MHz
@@ -146,7 +106,6 @@ int Main (void)
 		uart_Init ( (UART_MemMapPtr)UART0,ALT0,UART_BAUD_1 );     // Uart initilization
 		i2c_Init(I2C0, ALT1, MULT0, 0x1F);                        //I2C Initialized
 		uart_String(UART0, "UART, I2C Initialized\n");
-		lsm_Config();
 		//Nokia5110_Init();
 	
 		while(1)

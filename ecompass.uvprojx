@@ -397,11 +397,6 @@
               <FileType>1</FileType>
               <FilePath>.\RTE\Device\MKL25Z128xxx4\spi.c</FilePath>
             </File>
-            <File>
-              <FileName>nokia.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\nokia.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
